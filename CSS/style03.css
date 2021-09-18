@@ -1,0 +1,13 @@
+*{font-size: 100%; font-family: 'Cinzel', serif; text-align: center;}
+h1{font-size: 3em;}
+img{height: 300px; opacity: 0.7;}
+.main-body{text-align: center;padding: 20px ;margin: 0 auto; border-style:solid; max-width: 60%; border-radius: 10%; box-shadow: 10px 10px 5px greenyellow; margin-bottom: 50px;}
+.description{max-width: 50%; height: 80px; overflow: auto; font-style: italic; font-size: 1em;}
+#colour1{background-color: #077786;}
+#colour2{background-color: hsl(308, 62%, 63%);}
+#colour3{background-color: rgba(20, 99, 50, 10);}
+#line{float: left;}
+#gradient1{background: linear-gradient(to right,hsl(308, 62%, 63%), red);}
+#gradient2{background: linear-gradient(to left,hsl(308, 62%, 63%), red);}
+#gradient3{background: linear-gradient(to top right,hsl(308, 62%, 63%), red, orange);}
+#gradient4{background: radial-gradient(cyan, yellow);}
