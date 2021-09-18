@@ -1,0 +1,8 @@
+#cfix-0{background-color: cyan; width: 60% ;margin: 0 auto;}
+#cfix-1{background-color: darkblue; width: 200px; height: 200px; float: left;}
+#cfix-2{background-color: darkslateblue; width: 200px; height: 200px; float: right;}
+#cfix-0::before, #cfix-0::after{
+    content: "";
+    display: table}
+
+#cfix-0::after{clear: both;}

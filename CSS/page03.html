@@ -2,15 +2,24 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Images</title>
 		<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet"> 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="style03.css">
 	</head>
 	
 	<body>
+
+		<div id="panel">
+			Position: Fixed (aula 19)
+		</div>
+		<div class="main-body first">
+			<a href="#sonic" >Reveal</a>
+		</div>
 		<div class="main-body">
 			<h1>Nature is healing! 🙌🏾🙌🏾</h1>
-			<img src="https://i.redd.it/xolgetuslm241.jpg" title="Sonic Donkey" alt="A cute animal">
+			<img src="https://i.redd.it/xolgetuslm241.jpg" id="sonic" title="Sonic Donkey" alt="A cute animal">
 			<p class="description"> 
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed hendrerit libero, pellentesque fringilla mi. Aenean tristique efficitur quam quis pharetra.
                 Proin molestie nec libero sit amet rutrum. Fusce non suscipit mi. Phasellus dapibus ex ac nunc varius pharetra.
@@ -23,33 +32,35 @@
 			</p>
 		</div>
 
-		<h1> Colours & Gradients (Aula 16)</h1>
-		<div class="main-body" id="colour1" id="line">
-			#077786
-		</div>
+		<div>
 
-		<div class="main-body" id="colour2" id="line">
-			hsl(308, 62%, 63%)
-		</div>
-
-		<div class="main-body" id="colour3">
-			rgba(20, 99, 50, 10)
-		</div>
-
-		<div class="main-body" id="gradient1">
-			to right
-		</div>
-
-		<div class="main-body" id="gradient2">
-			to left
-		</div>
-
-		<div class="main-body" id="gradient3">
-			to top left
-		</div>
-
-		<div class="main-body" id="gradient4">
-			Radial
+			<h1> Colours & Gradients (Aula 16)</h1>
+			<div class="main-body colour" class="colour" id="colour1">
+				#077786
+			</div>
+			
+			<div class="main-body colour" id="colour2">
+				hsl(308, 62%, 63%)
+			</div>
+			
+			<div class="main-body colour" id="colour3">
+				rgba(20, 99, 50, 10)
+			</div>
+			<div class="main-body colour" id="gradient1">
+				to right
+			</div>
+			
+			<div class="main-body colour" id="gradient2">
+				to left
+			</div>
+			
+			<div class="main-body colour" id="gradient3">
+				to top left
+			</div>
+			
+			<div class="main-body colour" id="gradient4">
+				Radial
+			</div>
 		</div>
 	</body>
-</html>
+	</html>
