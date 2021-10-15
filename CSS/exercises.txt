@@ -1,3 +1,0 @@
-2) Padding é o espaçamento referente ao interior do componente HTML, já o margin é o espaçamento externo do componente.
-3)O jeito correto é: elemento{padding-top: Wpx; padding-left: Xpx; padding-bottom: Ypx; padding-right: Zpx;}
-4)O jeito correto é: .btn.green{attribute: X;}
