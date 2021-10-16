@@ -23,6 +23,13 @@
   - After the product is purchased by a customer, it'll be available in their profile to be visualised inside **NoInK Reader**.
   - Customers can review the product with a ⭐⭐⭐⭐⭐ system alongside a short, spoiler-free comment after purchasing it.
   - Each customer can keep a product wishlist in their profile section. 
+
+  [Figma's Link](https://www.figma.com/file/HKZYbDigSeju1kjP5Ma3I1/NoInk?node-id=0%3A1)  
+
+  In the html code, we made the main screen, the explore screen and the book killing joke. The rest is on the figma presentation.  
+
+  We plan to use a framework, possibly Vuejs, to make the actual app. So for now it's just a simple prototype.
+
   ## 3. Comments About the Code: 
   ## 4. Test Plan: 
   ## 5. Test Results:
