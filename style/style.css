@@ -1,0 +1,13 @@
+:root{
+    --bg-color: #f3f1f1;
+    --card-color:  white;
+    --logo-font: Quando;
+}
+body{background-color: var(--bg-color); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+#logo{font-family: var(--logo-font);}
+/*#top-bar h1{float: top left;}*/
+#top-bar #nav-bar{float:top left;}
+#nav-bar{background-color: var(--card-color); box-shadow: 0px 0px 20px lightgray; width: 70vw; float: right;}
+#nav-bar .page{
+    float: left;
+}
