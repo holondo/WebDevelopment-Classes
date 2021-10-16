@@ -4,10 +4,37 @@
     --logo-font: Quando;
 }
 body{background-color: var(--bg-color); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
-#logo{font-family: var(--logo-font);}
-/*#top-bar h1{float: top left;}*/
-#top-bar #nav-bar{float:top left;}
-#nav-bar{background-color: var(--card-color); box-shadow: 0px 0px 20px lightgray; width: 70vw; float: right;}
-#nav-bar .page{
+#top-bar{width: 100vw;}
+#top-bar::before, #top-bar::after{
+    content: "";
+    display: table}
+
+#top-bar::after{clear: both;}
+#logo{font-family: var(--logo-font); font-size: 5vh; float: left;}
+#nav-bar{
+    background-color: var(--card-color);
+    box-shadow: 0px 0px 20px lightgray; 
+    width: 70vw; 
+    float: right;
+    margin-right: 2vw;}
+#nav-bar .page {
     float: left;
+    padding: 10px;
+}
+#nav-bar input img p{
+    float: left;
+    padding: 10px;
+}
+
+.main-body{
+    margin: 0 auto;
+    width: 80vw;
+}
+.card{
+    margin: 0 auto;
+    background-color: var(--card-color);
+    box-shadow: 0px 0px 20px lightgray; 
+    padding: 0.5vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 }
