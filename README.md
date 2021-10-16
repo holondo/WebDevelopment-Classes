@@ -20,7 +20,7 @@
 ## 2. Project Description:
   - Administrators can select images to be used as promotional banners in the homescreen
   - Products are categorized by type of publication (Comics, books, magazines, manga, album). In each type, local best sellers will be highlighted.
-  - After product being purchased by a customer, it'll be available in their profile to be visualised inside **NoInK Reader**.
+  - After the product is purchased by a customer, it'll be available in their profile to be visualised inside **NoInK Reader**.
   - Customers can review the product with a ⭐⭐⭐⭐⭐ system alongside a short, spoiler-free comment after purchasing it.
   - Each customer can keep a product wishlist in their profile section. 
   ## 3. Comments About the Code: 
