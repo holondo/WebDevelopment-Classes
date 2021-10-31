@@ -17,7 +17,7 @@ btn.addEventListener("click", async (event) => {
         }
     )
     //console.log(colourPromise.text()) //Funcionaria para retornar a stream colourPromise como string
-    colourJSON = await colourPromise.json()
+    colourJSON = await colourPromise.json()//json() retorna uma Promise
     colourJSON = colourJSON.data
     
     show.style.backgroundColor = colourJSON.color
