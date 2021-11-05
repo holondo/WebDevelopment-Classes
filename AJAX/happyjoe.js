@@ -45,7 +45,6 @@ async function isJoeHappy3(happy){
     else{
         display(result)
     }
-    console.log(result)
 }
 
 function display(result) {
