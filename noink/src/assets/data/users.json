@@ -1,0 +1,38 @@
+[
+    {
+        "username" : "holondo",
+        "name" : "Guilherme holanda Sanches",
+        "booksRead" : [
+            0,
+            1
+        ],
+        "collection" : [
+            1,
+            2,
+            3,
+            4
+        ],
+        "wishlist" : [
+            5,
+            6
+        ]
+    },
+    {
+        "username" : "sann",
+        "name" : "Sehcnas",
+        "booksRead" : [
+            4,
+            3
+        ],
+        "collection" : [
+            1,
+            2,
+            3,
+            4
+        ],
+        "wishlist" : [
+            5,
+            6
+        ]
+    }
+]

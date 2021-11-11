@@ -1,0 +1,23 @@
+[
+    {
+        "id" : 0,
+        "name" : "homi araña",
+        "price" : 30.50,
+        "publication_date" : "30/01/2020",
+        "in_stock_date" : "10/11/2021"
+    },
+    {
+        "id" : 1,
+        "name" : "barman",
+        "price" : 30.50,
+        "publication_date" : "30/01/2020",
+        "in_stock_date" : "10/11/2021"
+    },
+    {
+        "id" : 1,
+        "name" : "barman",
+        "price" : 30.50,
+        "publication_date" : "30/01/2020",
+        "in_stock_date" : "10/11/2021"
+    }
+]
