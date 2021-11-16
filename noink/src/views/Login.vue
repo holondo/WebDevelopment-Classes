@@ -1,8 +1,8 @@
 <template>
     <v-container>
-        <v-card>
-            <v-row>
-                <v-col cols="6" offset="2">
+        <v-card class="pb-3">
+            <v-row justify="center">
+                <v-col cols="6">
                     <v-text-field
                     clearable
                     label="username"
@@ -13,8 +13,20 @@
                     </v-text-field>
                 </v-col>
             </v-row>
-                    <v-btn @click.prevent="performLogin"> Login </v-btn>
-                    <span color="error" v-if="userNotFound">Usuário não encontrado</span>
+            <v-row justify="center">
+                <v-btn @click.prevent="performLogin"> Login </v-btn>
+            </v-row>
+            <v-row justify="center">
+                <v-alert
+                shaped
+                dense
+                dark
+                type="warning"
+                v-if="userNotFound"
+                >
+                Usuário não encontrado
+                </v-alert>
+            </v-row>
         </v-card>
     </v-container>
 </template>

@@ -30,15 +30,17 @@
             class="my-auto mr-3"
       ></v-text-field>
 
-      <v-btn text to="profile" v-if="isLogged">
+      <v-btn text :to="{name: 'Profile'}" v-if="isLogged">
         <span >{{userName}}</span>
         <v-avatar
           color="grey darken-1 shrink"
           size="32"
           right
-        ></v-avatar>
+        >
+          <v-img :src="$store.getters.user.avatar"></v-img>
+        </v-avatar>
       </v-btn>
-      <v-btn outlined to="login" v-else>
+      <v-btn outlined :to="{name: 'Login'}" v-else>
           Login
       </v-btn>
     </v-app-bar>

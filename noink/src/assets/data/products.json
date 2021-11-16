@@ -4,20 +4,62 @@
         "name" : "homi araña",
         "price" : 30.50,
         "publication_date" : "30/01/2020",
-        "in_stock_date" : "10/11/2021"
+        "in_stock_date" : "10/11/2021",
+        "type" : 1,
+        "img_src" : "https://cdn1.appsisecommerce.com.br/clientes/cliente9694/produtos/43222/Z9988.jpg"
     },
     {
         "id" : 1,
         "name" : "barman",
         "price" : 30.50,
         "publication_date" : "30/01/2020",
-        "in_stock_date" : "10/11/2021"
+        "in_stock_date" : "10/11/2021",
+        "type" : 1,
+        "img_src" : "https://http2.mlstatic.com/D_NQ_NP_689991-MLB30725706929_052019-O.jpg"
     },
     {
-        "id" : 1,
+        "id" : 2,
         "name" : "barman",
         "price" : 30.50,
         "publication_date" : "30/01/2020",
-        "in_stock_date" : "10/11/2021"
+        "in_stock_date" : "10/11/2021",
+        "type" : 1,
+        "img_src" : "https://m.media-amazon.com/images/I/51X6oWwbTYL.jpg"
+    },
+    {
+        "id" : 3,
+        "name" : "Maus",
+        "price" : 30.50,
+        "publication_date" : "30/01/2020",
+        "in_stock_date" : "10/11/2021",
+        "type" : 1,
+        "img_src" : "https://images-na.ssl-images-amazon.com/images/I/916IgqQ-54L.jpg"
+    },
+    {
+        "id" : 4,
+        "name" : "Alice's Adventure in Wonderland",
+        "price" : 30.50,
+        "publication_date" : "30/01/2020",
+        "in_stock_date" : "10/11/2021",
+        "type" : 1,
+        "img_src" : "https://images-na.ssl-images-amazon.com/images/I/91ve5QjrJBL.jpg"
+    },
+    {
+        "id" : 5,
+        "name" : "The Fault in Our Stars",
+        "price" : 30.50,
+        "publication_date" : "30/01/2020",
+        "in_stock_date" : "10/11/2021",
+        "type" : 2,
+        "img_src" : "https://images-na.ssl-images-amazon.com/images/I/81a4kCNuH+L.jpg"
+    },
+    {
+        "id" : 6,
+        "name" : "The Perks Of Being a Wallflower",
+        "price" : 30.50,
+        "publication_date" : "30/01/2020",
+        "in_stock_date" : "10/11/2021",
+        "type" : 2,
+        "img_src" : "https://images-na.ssl-images-amazon.com/images/I/71720uZoL4L.jpg"
     }
 ]

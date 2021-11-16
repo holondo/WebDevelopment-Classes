@@ -18,7 +18,7 @@
     <!-- Products -->
     <v-row  v-for="row_number in Math.ceil(products.length / 6)" :key="row_number">
       <v-col cols="12">
-        <home-displayer :products="products" type="category 1"/>
+        <home-displayer :products="products.slice((row_number-1)*6)" :type="'Category ' + row_number"/>
       </v-col>
     </v-row>
   </v-container>
