@@ -12,7 +12,7 @@
                 <div>
                     <v-img :src="i.img_src" height="150"> </v-img>
                     <h4>{{i.name}}</h4><br>
-                    {{i.price}}
+                    Price: ${{i.price}}
                 </div>
                 </router-link>
             </v-col>
