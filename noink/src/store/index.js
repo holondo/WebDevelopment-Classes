@@ -8,13 +8,18 @@ export default new Vuex.Store({
   state: {
     user : {},
     logged: false,
-    products
+    products,
+    search : ""
   },
   mutations: {
     login(state, {foundUser}){
       state.user = foundUser
       console.log(foundUser)
       state.logged = true
+    },
+    addWishlist(state, {productId}){
+      console.log("Product id: ", productId)
+      state.user.wishlist.push(productId)
     }
   },
   actions: {
@@ -25,6 +30,9 @@ export default new Vuex.Store({
       }
       commit("login", {foundUser})
       return true
+    },
+    addToWishlist({commit}, productId){
+      commit("addWishlist", {productId})
     }
   },
   getters: {

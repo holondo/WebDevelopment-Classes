@@ -5,7 +5,6 @@
       flat
     >
       <v-app-bar-title>NoInK</v-app-bar-title>
-      
 
       <v-tabs
         centered
@@ -21,13 +20,14 @@
       </v-tabs>
 
       <v-text-field
-            v-model="message2"
+            v-model="$store.state.search"
             outlined
             label="Search"
             rounded
             clearable
             append-icon="mdi-magnify"
             class="my-auto mr-3"
+            @click="$router.push({name: 'Explore'})"
       ></v-text-field>
 
       <v-btn text :to="{name: 'Profile'}" v-if="isLogged">
@@ -61,7 +61,12 @@
               else{
                 return "Username"
               }
-            }
-        }
+            },
+        },
+        data: () => {
+              return {
+                search: ""
+              }
+            },
     })
 </script>
