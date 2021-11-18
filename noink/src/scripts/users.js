@@ -7,10 +7,12 @@ class Users{
                 console.log(user)
                 return user
             }
-            else{
-                return{}
-            }
         }
+        return{}
+    }
+
+    getUser(userId){
+        return users[userId]
     }
 }
 export default new Users()

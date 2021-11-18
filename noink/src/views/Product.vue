@@ -7,7 +7,11 @@
                     <v-img :src="product.img_src" width="15vw" class="mx-auto"> </v-img>
                     <h3 class="text-center">Price: ${{product.price}}</h3>
             </v-col>
-                    <v-btn color="primary" class="mx-auto" v-if="$store.getters.isLogged" @click.prevent="addToWishlist">Add to Wishlist</v-btn>
+                    <v-btn :disabled="addedWishlist" color="primary" class="mx-auto my-5" v-if="$store.getters.isLogged" @click.prevent="addToWishlist">
+                        <v-icon>mdi-plus-thick</v-icon>
+                        Add to Wishlist
+                    </v-btn>
+
         </v-row>
                 </v-card>
     </v-container>
@@ -17,7 +21,9 @@
         name: "Product",
         data(){
             return{
-                product: {}
+                product: {},
+                addedWishlist: false,
+
             }
         },
         created(){
@@ -29,6 +35,7 @@
         methods: {
             addToWishlist(){
                 this.$store.dispatch("addToWishlist", this.product.id)
+                this.addedWishlist = true
             }
         },
     } 

@@ -11,10 +11,12 @@
         class="ml-n9"
         color="grey darken-1"
       >
-        <v-tab>
+        <v-tab :to="{name: 'Home'}">
+          <v-icon left>mdi-home</v-icon>
           <router-link :to="{name: 'Home'}" style="text-decoration: none; color: inherit;">Home</router-link>
         </v-tab>
-        <v-tab>
+        <v-tab :to="{name: 'Explore'}">
+          <v-icon left>mdi-view-week</v-icon>
           <router-link :to="{name: 'Explore'}" style="text-decoration: none; color: inherit;">Explore</router-link>
         </v-tab>
       </v-tabs>
