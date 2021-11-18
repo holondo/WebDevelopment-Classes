@@ -61,5 +61,32 @@
         "in_stock_date" : "10/11/2021",
         "type" : 2,
         "img_src" : "https://images-na.ssl-images-amazon.com/images/I/71720uZoL4L.jpg"
+    },
+    {
+        "id" : 7,
+        "name" : "Sapiens",
+        "price" : 60.00,
+        "publication_date" : "30/01/2020",
+        "in_stock_date" : "10/11/2021",
+        "type" : 2,
+        "img_src" : "https://images-na.ssl-images-amazon.com/images/I/41yu2qXhXXL._SX324_BO1,204,203,200_.jpg"
+    },
+    {
+        "id" : 8,
+        "name" : "Um Curso de Cálculo vol.1",
+        "price" : 6.66,
+        "publication_date" : "30/01/2020",
+        "in_stock_date" : "10/11/2021",
+        "type" : 2,
+        "img_src" : "https://ra-content-prod.s3.sa-east-1.amazonaws.com/Book/7.png?v=1572017925700"
+    },
+    {
+        "id" : 9,
+        "name" : "The Invention of Hugo Cabret",
+        "price" : 30.50,
+        "publication_date" : "30/01/2020",
+        "in_stock_date" : "10/11/2021",
+        "type" : 2,
+        "img_src" : "https://images-na.ssl-images-amazon.com/images/I/81VlThzDlVL.jpg"
     }
 ]
