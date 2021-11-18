@@ -9,8 +9,9 @@
 
     <v-row>
       <v-col cols="12">
-        <v-sheet color="info" rounded>
-          <v-text h1>Recommended for you</v-text>
+        <v-sheet color="#AAAAff" rounded>
+          <h1 class="my-20 text-center" style="font-family: 'Courier New'; font-size:60px">🤑PRODUCTS ON SALE 🤑</h1>
+          <p class="text-center">*Applied only for those who review with 10</p>
         </v-sheet>
       </v-col>
     </v-row>
