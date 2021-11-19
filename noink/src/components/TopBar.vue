@@ -32,6 +32,9 @@
             @click="$router.push({name: 'Explore'})"
       ></v-text-field>
 
+      <v-btn icon v-if="isLogged" :to="{name: 'Cart'}">
+        <v-icon>mdi-cart</v-icon>
+      </v-btn>
       <v-btn text :to="{name: 'Profile'}" v-if="isLogged">
         <span >{{userName}}</span>
         <v-avatar
@@ -42,6 +45,7 @@
           <v-img :src="$store.getters.user.avatar"></v-img>
         </v-avatar>
       </v-btn>
+      
       <v-btn outlined :to="{name: 'Login'}" v-else>
           Login
       </v-btn>

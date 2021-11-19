@@ -3,6 +3,11 @@
         "id" : 0,
         "username" : "holondo",
         "name" : "Guilherme holanda Sanches",
+        "cart" : [
+            2,
+            6,
+            8
+        ],
         "booksRead" : [
             0,
             1
@@ -30,6 +35,11 @@
         "id" : 1,
         "username" : "sann",
         "name" : "Sehcnas",
+        "cart" : [
+            2,
+            6,
+            8
+        ],
         "booksRead" : [
             4,
             3
@@ -55,6 +65,11 @@
         "id" : 2,
         "username" : "ygorpontelo",
         "name" : "Ygor Pontelo",
+        "cart" : [
+            2,
+            6,
+            8
+        ],
         "booksRead" : [
             5,
             6
@@ -79,6 +94,11 @@
         "id" : 3,
         "username" : "kwarahy",
         "name" : "Kwarahy Tazyr",
+        "cart" : [
+            2,
+            6,
+            8
+        ],
         "booksRead" : [
             5,
             6
@@ -102,6 +122,11 @@
         "id" : 4,
         "username" : "Jasy",
         "name" : "Jasy Lua",
+        "cart" : [
+            2,
+            6,
+            8
+        ],
         "booksRead" : [
             5,
             6
@@ -126,6 +151,11 @@
         "id" : 5,
         "username" : "mako",
         "name" : "Mako Aurélio",
+        "cart" : [
+            2,
+            6,
+            8
+        ],
         "booksRead" : [
             5,
             6
