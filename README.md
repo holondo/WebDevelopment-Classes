@@ -28,7 +28,7 @@
 
   The comments of session 3 refer especifically to the front end part  
 
-  The back end will likely be implemented using node express
+  The back end will likely be implemented using node express and mongoDB
 
   ## 3. Comments About the Code: 
 
@@ -40,7 +40,7 @@
   ## 4. Test Plan: 
 
   - We plan to use postman to test the server calls
-  - Write unit testes for the api
+  - Write unit tests for the api
 
   ## 5. Test Results:
   ## 6. Build Procedures: 
