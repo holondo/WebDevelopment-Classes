@@ -47,6 +47,7 @@
 
   - We will use Docker to build the images
   - The package will contain a docker-compose to run the project
+  - To build and run Milestone02: Follow the instructions in the README.md inside noink directory
 
   ## 7. Problems: 
   ## 8. Comments:

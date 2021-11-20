@@ -1,9 +1,0 @@
-*{box-sizing: border-box;}
-h4, h5, h6{text-align: center; color: olive;}
-.main-text{text-align: center; text-indent: 10px; line-height: 30px; direction: ltr; letter-spacing: 3;}
-.main-background{background-color: #000000; color: #ffffff; max-width: 70%; min-width: 50%; padding: 60px; margin-left: 20px;
-    margin-bottom: 25px; text-shadow: 3px 10px 4px red; font-family: 'Franklin Gothic Medium';}
-#content{margin-left: 50px; color: lightcoral; background-color: lightgoldenrodyellow; text-emphasis: initial; min-height: 100px; text-indent: 20px; box-shadow: -10px 10px 10px cyan;}
-h1{text-align: left; text-decoration: underline;}
-h2{text-align: right; text-decoration: overline; text-transform: lowercase;}
-h3{text-align: center; text-decoration: line-through; text-transform: uppercase;}
