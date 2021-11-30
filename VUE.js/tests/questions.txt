@@ -1,0 +1,1 @@
+Two-way-binding is the instantaneos connection between app's state variables, and HTML input and in Vue, it's done by using v-model directive in an input component.
