@@ -34,6 +34,16 @@ const routes = [
     path: '/cart',
     name: 'Cart',
     component: () => import('../views/Cart.vue')
+  },
+  {
+    path: '/new-product',
+    name: 'ProductForm',
+    component: () => import('../views/productForm.vue')
+  },
+  {
+    path: '/new-banner',
+    name: 'BannerForm',
+    component: () => import('../views/BannerForm.vue')
   }  
 ]
 

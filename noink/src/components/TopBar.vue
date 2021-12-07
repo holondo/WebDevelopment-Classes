@@ -19,6 +19,9 @@
           <v-icon left>mdi-view-week</v-icon>
           <router-link :to="{name: 'Explore'}" style="text-decoration: none; color: inherit;">Explore</router-link>
         </v-tab>
+        <v-tab v-if="isAdmin">
+          <router-link :to="{name: 'ProductForm'}" style="text-decoration: none; color: inherit;">New Product</router-link>
+        </v-tab>
       </v-tabs>
 
       <v-text-field
@@ -58,6 +61,9 @@
         computed: {
             isLogged(){
                 return this.$store.getters.isLogged
+            },
+            isAdmin(){
+              return this.$store.getters.isAdmin
             },
             userName(){
               if(this.$store.getters.isLogged){

@@ -3,6 +3,7 @@
         "id" : 0,
         "username" : "holondo",
         "name" : "Guilherme holanda Sanches",
+        "admin" : false,
         "cart" : [
             2,
             6,
@@ -35,6 +36,7 @@
         "id" : 1,
         "username" : "sann",
         "name" : "Sehcnas",
+        "admin" : false,
         "cart" : [
             2,
             6,
@@ -65,6 +67,7 @@
         "id" : 2,
         "username" : "ygorpontelo",
         "name" : "Ygor Pontelo",
+        "admin" : false,
         "cart" : [
             2,
             6,
@@ -94,6 +97,7 @@
         "id" : 3,
         "username" : "kwarahy",
         "name" : "Kwarahy Tazyr",
+        "admin" : false,
         "cart" : [
             2,
             6,
@@ -122,6 +126,7 @@
         "id" : 4,
         "username" : "Jasy",
         "name" : "Jasy Lua",
+        "admin" : false,
         "cart" : [
             2,
             6,
@@ -151,6 +156,7 @@
         "id" : 5,
         "username" : "mako",
         "name" : "Mako Aurélio",
+        "admin" : false,
         "cart" : [
             2,
             6,
@@ -175,5 +181,27 @@
             3
         ],
         "avatar" : "https://i.pinimg.com/originals/a4/60/9d/a4609d36c6857bb11e2a5380a515b40a.png"
+    },
+    {
+        "id" : 6,
+        "username" : "admin",
+        "name" : "Administrator",
+        "admin" : true,
+        "cart" : [
+            
+        ],
+        "booksRead" : [
+            
+        ],
+        "collection" : [
+            
+        ],
+        "wishlist" : [
+           
+        ],
+        "follows" : [
+            
+        ],
+        "avatar" : "https://thumbs.dreamstime.com/b/admin-sign-laptop-icon-stock-vector-166205404.jpg"
     }
 ]
