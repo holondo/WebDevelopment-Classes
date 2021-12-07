@@ -9,10 +9,18 @@
 
     <v-row>
       <v-col cols="12">
-        <v-sheet color="#AAAAff" rounded>
-          <h1 class="my-20 text-center" style="font-family: 'Courier New'; font-size:60px">🤑PRODUCTS ON SALE 🤑</h1>
-          <p class="text-center">*Applied only for those who review with 10</p>
+        <v-sheet :color="banner.color" rounded>
+          <v-row justify="space-around">
+            <v-col cols="6">
+              <h1 class="my-20 text-center" style="font-family: 'Courier New'; font-size:60px">{{banner.title}}</h1>
+              <p class="text-center">{{banner.subtitle}}</p>
+            </v-col>
+            <v-col cols="2">
+              <v-img max-width="80px" :src="banner.img" class="elevation-3"/>
+            </v-col>  
+          </v-row>
         </v-sheet>
+        <v-btn v-if="isAdmin" :to="{name: 'BannerForm'}">Change banner</v-btn>
       </v-col>
     </v-row>
 
@@ -39,7 +47,7 @@
       }
     },
     computed: {
-      ...mapGetters(["isLogged", "user", "userReadBooks"])
+      ...mapGetters(["isLogged", "user", "userReadBooks", "isAdmin", 'banner'])
     },
   }
 </script>

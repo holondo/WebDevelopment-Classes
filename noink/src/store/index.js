@@ -3,12 +3,15 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 import products from "..\\assets\\data\\products.json"
+import banners from "..\\assets\\data\\banners.json"
 import usersClass from '../scripts/users'
 export default new Vuex.Store({
   state: {
     user : {},
     logged: false,
+    admin: false,
     products,
+    banners,
     search : ""
   },
   mutations: {
@@ -16,6 +19,9 @@ export default new Vuex.Store({
       state.user = foundUser
       console.log(foundUser)
       state.logged = true
+      if (foundUser.admin){
+        state.admin = true
+      }
     },
     addWishlist(state, {productId}){
       console.log("Product id: ", productId)
@@ -39,6 +45,9 @@ export default new Vuex.Store({
     isLogged: (state) => {
       return state.logged
     },
+    isAdmin: (state) => {
+      return state.admin
+    },
     user: (state) => {
       return state.user
     },
@@ -50,7 +59,10 @@ export default new Vuex.Store({
         }
       }
       return booksRead
-    }
+    },
+    banner: (state) => {
+      return state.banners
+    }  
   },
   modules: {
   }
