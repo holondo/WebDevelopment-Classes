@@ -1,7 +1,8 @@
 'use strict';
+
 import mongoose from "mongoose"
+
 const product = mongoose.model('product')
-var objects = {}
 
 export async function del(req, res){
     const id = req.params.id;
@@ -10,6 +11,7 @@ export async function del(req, res){
         res.status(200).send({message: "Delete successful"})
     }
     catch(error){
+        console.error(error)
         res.status(400).send({message: "Cannot delete"})
     }
 }
@@ -20,7 +22,8 @@ export async function get(req, res){
         res.status(200).send(foundProducts)
     }
     catch(error){
-        res.status(400).send(error)
+        console.error(error)
+        res.status(400).send({message: "Products not found"})
     }
 }
 
@@ -32,7 +35,8 @@ export async function getByID(req, res){
         res.status(200).send(foundProducts)
     }
     catch(error){
-        res.status(400).send(error)
+        console.error(error)
+        res.status(400).send({message: "Product not found"})
     }
 }
 
@@ -52,7 +56,8 @@ export async function put(req, res){
         res.status(200).send({message:"Product has been updated"})
     }
     catch(error){
-        res.status(400).send({message: error})
+        console.error(error)
+        res.status(400).send({message: "Could not update product"})
     }
 }
 
@@ -64,9 +69,8 @@ export async function post(req, res){
             body: newProduct
         })
     } catch (error) {
+        console.error(error)
         res.status(400).send({
-            message: "Product was not inserted",
-            error: error
-        })
+            message: "Product was not inserted"})
     }
 }

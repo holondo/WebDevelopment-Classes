@@ -1,7 +1,8 @@
 'use strict';
+
 import mongoose from "mongoose"
+
 const user = mongoose.model('user')
-var objects = {}
 
 export async function del(req, res){
     const id = req.params.id;
@@ -10,6 +11,7 @@ export async function del(req, res){
         res.status(200).send({message: "Delete successful"})
     }
     catch(error){
+        console.error(error)
         res.status(400).send({message: "Cannot delete"})
     }
 }
@@ -20,7 +22,8 @@ export async function get(req, res){
         res.status(200).send(foundUsers)
     }
     catch(error){
-        res.status(400).send(error)
+        console.error(error)
+        res.status(400).send({message: "Could not find user"})
     }
 }
 
@@ -31,7 +34,8 @@ export async function getByID(req, res){
         res.status(200).send(foundUsers)
     }
     catch(error){
-        res.status(400).send(error)
+        console.error(error)
+        res.status(400).send({message: "Could not find user"})
     }
 }
 
@@ -53,7 +57,8 @@ export async function put(req, res){
         res.status(200).send({message:"user has been updated"})
     }
     catch(error){
-        res.status(400).send({message: error})
+        console.error(error)
+        res.status(400).send({message: "Could not update user"})
     }
 }
 
@@ -65,9 +70,8 @@ export async function post(req, res){
             body: newuser
         })
     } catch (error) {
-        res.status(400).send({
-            message: "user was not inserted"
-        })
+        console.error(error)
+        res.status(400).send({message: "user was not inserted"})
     }
 }
 
@@ -80,7 +84,7 @@ export async function login(req, res){
             body: userLogin
         })
     } catch (error) {
-        res.status(400).send({
-        })
+        console.error(error)
+        res.status(400).send({message: "Could not find login"})
     }
 }

@@ -43,4 +43,5 @@ const schema = mongoose.Schema({
         default: ""
     }
 });
+
 export default mongoose.model('user', schema);
