@@ -18,12 +18,26 @@
   import productCard from '../components/productCard.vue'
   export default{
     name: "Explore",
+    data() {
+      return {
+        products: []
+      }
+    },
+    methods: {
+      async getProducts(){
+        let resp = await fetch("http://localhost:3000/products/")
+        this.products = await resp.json()
+      }
+    },
+    created() {
+      this.getProducts()
+    },
     components:{
       productCard
     },
     computed: {
       filter(){
-         return this.$store.state.products.filter((f) => 
+         return this.products.filter((f) => 
          f.name.toLowerCase().includes(this.$store.state.search.toLowerCase() || ""))
         } 
     }

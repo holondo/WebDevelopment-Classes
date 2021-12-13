@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+const backend = "http://localhost:3000/"
 
 Vue.use(Vuex)
 import products from "..\\assets\\data\\products.json"
@@ -23,14 +24,34 @@ export default new Vuex.Store({
         state.admin = true
       }
     },
-    addWishlist(state, {productId}){
-      console.log("Product id: ", productId)
+    async addWishlist(state, {productId}){
+      console.log("user id: ", state.user._id)
       state.user.wishlist.push(productId)
+      await fetch(backend+"users/"+state.user._id, {
+          method: 'PUT',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(state.user)
+      })
+    },
+    async addCart(state, {productId}){
+      state.user.cart.push(productId)
+      console.log("user:", JSON.stringify(state.user))
+      let resp = await fetch(backend+"users/"+state.user._id, {
+          method: 'PUT',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(state.user)
+      })
+      resp = await resp.json()
+      console.log(resp)
+    },
+    async updateProducts(state){
+      state.products = await fetch("https://localhost:3000/products")
     }
   },
   actions: {
-    performLogin({commit}, username){
-      let foundUser = usersClass.login(username)
+    async performLogin({commit}, username){
+      let foundUser = await usersClass.login(username)
+      console.log("FU", foundUser)
       if(Object.keys(foundUser).length === 0){
         return false
       }
@@ -39,7 +60,10 @@ export default new Vuex.Store({
     },
     addToWishlist({commit}, productId){
       commit("addWishlist", {productId})
-    }
+    },
+    addToCart({commit}, productId){
+      commit("addCart", {productId})
+    }    
   },
   getters: {
     isLogged: (state) => {
@@ -62,7 +86,11 @@ export default new Vuex.Store({
     },
     banner: (state) => {
       return state.banners
-    }  
+    },
+    getProductByID: async(state, id) => {
+      let product = await fetch("https://localhost:3000/products/"+id)
+      return product
+    }
   },
   modules: {
   }

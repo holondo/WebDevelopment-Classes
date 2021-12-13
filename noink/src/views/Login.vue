@@ -14,10 +14,15 @@
                     @keyup.enter="performLogin"
                     >
                     </v-text-field>
+                    <v-checkbox
+                        v-model="checkbox"
+                        label="Admin"
+                    ></v-checkbox>
                 </v-col>
             </v-row>
             <v-row justify="center">
                 <v-btn @click.prevent="performLogin" class="mb-5"> Login </v-btn>
+                <v-btn @click.prevent="createUser" class="mb-5"> Create</v-btn>
             </v-row>
             <v-row justify="center">
                 <v-alert
@@ -38,7 +43,8 @@ export default {
     data(){
         return{
             username: "",
-            userNotFound : false
+            userNotFound : false,
+            checkbox: false
         }
     },
     methods: {
@@ -53,6 +59,17 @@ export default {
                     this.userNotFound = true
                 }
             })
+        },
+        async createUser(){
+            let resp = await fetch("http://localhost:3000/users",{
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    username: this.username,
+                    admin: this.checkbox
+                })
+            })
+            if(resp.status === 201){window.alert("Criou")}
         }
     }
 }

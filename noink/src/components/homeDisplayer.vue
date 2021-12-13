@@ -8,7 +8,7 @@
                 cols="2"
                 md="2"
             >
-                <router-link style="text-decoration: none; color: inherit" :to="{name : 'Product', params: {id: i.id}}">
+                <router-link style="text-decoration: none; color: inherit" :to="{name : 'Product', params: {id: i._id}}">
                 <div>
                     <v-img :src="i.img_src" height="150"> </v-img>
                     <h4>{{i.name}}</h4><br>

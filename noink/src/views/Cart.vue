@@ -14,9 +14,9 @@
                             sm="12"
                             md="8"
                             lg="4"
-                            v-for="productID in userCart" :key="productID"
+                            v-for="product in products" :key="product"
                             >
-                            <productCard :product="$store.state.products[productID]"/>
+                            <productCard :product="product"/>
                             </v-col>
                         </v-row>
                     </v-card>
@@ -58,21 +58,33 @@
         data() {
             return {
                 userCart: this.$store.getters.user.cart,
-                bought : false
+                bought : false,
+                products : []
             }
+        },
+        created() {
+            this.getProducts()
         },
         methods:{
             cartPrice() {
                 let total = 0
-                for (const productID of this.userCart) {
-                    total += this.$store.state.products[productID].price
+                for (const product of this.products) {
+                    total += product.price
                 }
                 return total
             },
-            buy(){
+            async buy(){
                 this.bought = true
+                this.$store.getters.user.collections = this.$store.getters.user.collections.concat(this.$store.getters.user.cart)
+                this.$store.getters.user.cart = []
+                console.log("collection: ", this.$store.getters.user.collections)
+                console.log(JSON.stringify(this.$store.getters.user))
+                await fetch("http://localhost:3000/users/"+this.$store.getters.user._id, {
+                    method: 'PUT',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(this.$store.getters.user)
+                })
                 setTimeout(() => {
-                    this.$store.getters.user.cart = []
                     this.$router.push({name: "Home"})
                 },1000 );
                 
@@ -80,6 +92,15 @@
             isEmpty(){
                 if(this.$store.getters.user.cart.length === 0) return true
                 else return false
+            },
+            async getProducts(){
+                for(let productID of this.$store.getters.user.cart){
+                    let resp = await fetch("http://localhost:3000/products/"+productID)
+                    if(resp.status === 200){
+                        let product = await resp.json()
+                        this.products.push(product)
+                    }
+                }
             }
         }
     }

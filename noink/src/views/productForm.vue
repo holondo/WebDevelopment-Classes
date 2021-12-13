@@ -21,7 +21,7 @@
                 <v-radio label="Book" value="2"/>
               </v-radio-group>
               <v-text-field v-model="image" outlined placeholder="Image URL" prepend-icon="mdi-camera"></v-text-field>
-              <v-textarea placeholder="Description" outlined></v-textarea>
+              <v-textarea v-model="description" placeholder="Description" outlined></v-textarea>
             </v-card>
           </v-col>
         </v-row>
@@ -46,17 +46,25 @@
       }
     },
     methods: {
-      click(){
+      async click(){
         let product = {
           name: this.Pname,
-          price: this.price,
+          price: Number(this.price),
           publication_date: this.date,
-          in_stock_date: new Date(),
-          type: this.type,
+          in_stock_date: new Date().toString(),
+          type: Number(this.type),
           img_src: this.image,
           description: this.description
         }
         console.log(product) //adicionar funcao e acrescentar o id
+        let resp = await fetch("http://localhost:3000/products/", {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(product)
+        })
+        if(resp.status === 201){
+          window.alert("deuu")
+        }
       }
     },
 

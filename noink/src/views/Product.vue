@@ -1,6 +1,6 @@
 <template>
     <v-container>
-                <v-card>
+        <v-card>
         <v-row justify="center">
             <v-card-title>{{product.name}}</v-card-title>
         </v-row>
@@ -36,28 +36,33 @@
         },
         created(){
             let productID = this.$route.params.id
-            if(productID <= this.$store.state.products.length){
-                this.product = this.$store.state.products[productID]
-            }
+            console.log(productID)
+                //this.product = this.$store.state.products[productID]
+            this.getProduct(productID)
         },
         methods: {
             addToWishlist(){
-                this.$store.dispatch("addToWishlist", this.product.id)
+                this.$store.dispatch("addToWishlist", this.product._id)
                 this.addedWishlistBool = true
             },
             addToCart(){
-                this.$store.state.user.cart.push(this.product.id)
+                this.$store.dispatch("addToCart", this.product._id)
                 this.addedCartBool = true
             },
+            async getProduct(productID){
+                let resp = await fetch("http://localhost:3000/products/"+productID)
+                this.product = await resp.json()
+                console.log(this.product)
+            }
             
         },
         computed:{
             addedCart(){
-                if(this.$store.getters.user.cart.includes(this.product.id)){return true}
+                if(this.$store.getters.user.cart.includes(this.product._id)){return true}
                 return false
             },
             addedWishlist(){
-                if(this.$store.getters.user.wishlist.includes(this.product.id)){ return true}
+                if(this.$store.getters.user.wishlist.includes(this.product._id)){ return true}
                 return false
             }
         }

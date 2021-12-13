@@ -43,7 +43,16 @@
     },
     data() {
       return {
-        products : this.$store.state.products,
+        products : {},
+      }
+    },
+    created() {
+      this.getProducts()
+    },
+    methods: {
+      async getProducts(){
+        let resp = await fetch("http://localhost:3000/products/")
+        this.products = await resp.json()
       }
     },
     computed: {

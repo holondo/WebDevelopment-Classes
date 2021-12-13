@@ -4,12 +4,17 @@
             <v-col cols="6">
                 <v-card>
                     <v-row justify="center">
-                        <v-card-title centered>{{$store.getters.user.name}}</v-card-title>
+                        <v-card-title v-if="!updating" centered>{{$store.getters.user.name}}</v-card-title>
+                        <v-text-field v-else outlined label="Your Name" v-model="name" class="ma-5"></v-text-field>
                     </v-row>
                     <v-row justify="center">
-                        <v-avatar size="15vw" class="elevation-3">
-                        <v-img :src="$store.getters.user.avatar" width="15vw" height="15vw"></v-img>
-                        </v-avatar>
+                        <div v-if="!updating">
+                            <v-avatar size="15vw" class="elevation-3">
+                                <v-img v-if="$store.getters.user.avatar != ''" :src="$store.getters.user.avatar" width="15vw" height="15vw"></v-img>
+                                <v-img v-else src="https://bellfund.ca/wp-content/uploads/2018/03/demo-user.jpg" width="15vw" height="15vw"></v-img>
+                            </v-avatar>
+                        </div>
+                        <v-text-field v-else outlined label="Image URL" v-model="avatar" class="ma-5"></v-text-field>
                     </v-row>
                     <v-row justify="center">
                         <strong class="my-5">Books Read: {{$store.getters.user.booksRead.length}}</strong><br/><br/>
@@ -17,6 +22,10 @@
                 </v-card>
             </v-col>
         </v-row><br/>
+        <v-row justify="center">
+            <v-btn v-if="!updating" color="success" @click="updating = true">Change profile</v-btn>
+            <v-btn v-else color="success" @click.prevent="save">Save Changes</v-btn>
+        </v-row>
         <v-row justify="center">
             <h3 class="text-center mt-5" v-if="$store.getters.user.follows.length > 0">Following {{$store.getters.user.follows.length}} users:</h3>
         </v-row>
@@ -39,9 +48,9 @@
                             sm="6"
                             md="4"
                             lg="3"
-                            v-for="productID in $store.getters.user.wishlist" :key="productID"
+                            v-for="product in wishlist" :key="product"
                         >
-                            <product-card :product="$store.state.products[productID]"/>
+                            <product-card :product="product"/>
                         </v-col>
 
                     </v-row>
@@ -57,9 +66,9 @@
                             sm="6"
                             md="4"
                             lg="3"
-                            v-for="productID in $store.getters.user.collection" :key="productID"
+                            v-for="product in collection" :key="product"
                         >
-                            <product-card :product="$store.state.products[productID]"/>
+                            <product-card :product="product"/>
                         </v-col>
 
                     </v-row>
@@ -79,9 +88,48 @@
             productCard,
             userDisplay
         },
+        data() {
+            return {
+                wishlist: [],
+                collection: [],
+                name: this.$store.getters.user.name,
+                avatar: this.$store.getters.user.avatar,
+                updating: false
+            }
+        },
+        created() {
+            this.getProducts()
+        },
         methods: {
-            getUser(id){
-                return usersClass.getUser(id)
+            async getUser(id){
+                return await usersClass.getUser(id)
+            },
+            async getProducts(){
+                for(let productID of this.$store.getters.user.wishlist){
+                    let resp = await fetch("http://localhost:3000/products/"+productID)
+                    if(resp.status === 200){
+                        let product = await resp.json()
+                        console.log("product:", product)
+                        this.wishlist.push(product)
+                    }
+                }
+                for(let productID of this.$store.getters.user.collections){
+                    let resp = await fetch("http://localhost:3000/products/"+productID)
+                    if(resp.status === 200){
+                        let product = await resp.json()
+                        this.collection.push(product)
+                    }
+                }
+            },
+            async save(){
+                this.$store.getters.user.name = this.name
+                this.$store.getters.user.avatar = this.avatar
+                await fetch("http://localhost:3000/users/"+this.$store.getters.user._id, {
+                    method: 'PUT',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(this.$store.getters.user)
+                })
+                this.updating = false
             }
         }
     }

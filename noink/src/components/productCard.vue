@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="{name: 'Product', params: {id : product.id}}">
+    <router-link :to="{name: 'Product', params: {id : product._id}}">
         <v-card>
             <v-img :src="product.img_src" height="150"> </v-img>
             <v-card-title>{{product.name}}</v-card-title>
