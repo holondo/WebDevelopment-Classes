@@ -3,8 +3,6 @@
         <v-card class="pb-3">
             <v-row justify="center">
                 <v-col cols="6">
-                    Sistema de senha será implementado com o backend.<br/>
-                    logar com user: holondo, ygorpontelo, kwarahy, jasy
                     <v-text-field
                     clearable
                     label="username"

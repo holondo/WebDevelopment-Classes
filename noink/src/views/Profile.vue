@@ -69,6 +69,7 @@
                             v-for="product in collection" :key="product"
                         >
                             <product-card :product="product"/>
+                            <v-btn small @click="read(product._id)" color="success" fab outlined class="my-2"> <v-icon>mdi-book-open-page-variant-outline</v-icon> </v-btn>
                         </v-col>
 
                     </v-row>
@@ -130,6 +131,15 @@
                     body: JSON.stringify(this.$store.getters.user)
                 })
                 this.updating = false
+            },
+            async read(productID){
+                this.$store.getters.user.booksRead.push(productID)
+                await fetch("http://localhost:3000/users/"+this.$store.getters.user._id, {
+                    method: 'PUT',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(this.$store.getters.user)
+                })
+                window.alert("Reading")
             }
         }
     }

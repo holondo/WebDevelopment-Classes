@@ -3,7 +3,7 @@
     <!-- Read recently -->
     <v-row v-if="isLogged">
       <v-col cols="12">
-        <home-displayer :products="userReadBooks" type="Read Recently"/>
+        <home-displayer :products="userBooks" type="Read Recently"/>
       </v-col>
     </v-row>
 
@@ -44,12 +44,14 @@
     data() {
       return {
         products : {},
-        banner: {}
+        banner: {},
+        userBooks:[]
       }
     },
     created() {
       this.getProducts()
       this.getBanner()
+      this.getUserBooks()
     },
     methods: {
       async getProducts(){
@@ -58,11 +60,16 @@
       },
       async getBanner(){
         this.banner = await this.currBanner
-        console.log("Banner", this.banner)
+      },
+      async getUserBooks(){
+        if(this.isLogged){
+          this.userBooks = await this.userReadBooks
+        }
+
       }
     },
     computed: {
-      ...mapGetters(["isLogged", "user", "userReadBooks", "isAdmin", "currBanner"])
+      ...mapGetters(["isLogged", "user", "isAdmin", "currBanner", "userReadBooks"])
     },
   }
 </script>

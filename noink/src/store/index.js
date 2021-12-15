@@ -75,13 +75,18 @@ export default new Vuex.Store({
     user: (state) => {
       return state.user
     },
-    userReadBooks: (state) =>{
+    userReadBooks: async (state) =>{
       let booksRead = []
       if(state.logged){
-        for (const bookID of state.user.booksRead) {
-          booksRead.push(state.products[bookID])
+        for(let productID of state.user.booksRead){
+          let resp = await fetch("http://localhost:3000/products/"+productID)
+          if(resp.status === 200){
+              let product = await resp.json()
+              booksRead.push(product)
+          }
         }
       }
+      console.log("BOOKSREAD index:", booksRead)
       return booksRead
     },
     currBanner: async (state) => {

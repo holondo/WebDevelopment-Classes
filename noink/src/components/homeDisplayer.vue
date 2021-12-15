@@ -4,7 +4,7 @@
         <v-row class="px-3">
             <v-col
                 v-for="i in products.slice(0, 6)"
-                :key="i"
+                :key="i._id"
                 cols="2"
                 md="2"
             >
@@ -16,6 +16,7 @@
                 </div>
                 </router-link>
             </v-col>
+            <h4 v-if="products.length === 0" class="mx-3"> Choose something from your collection to read..</h4>
         </v-row>
     </v-card>
 </template>
