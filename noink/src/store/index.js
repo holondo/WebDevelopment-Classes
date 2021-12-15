@@ -3,16 +3,16 @@ import Vuex from 'vuex'
 const backend = "http://localhost:3000/"
 
 Vue.use(Vuex)
-import products from "..\\assets\\data\\products.json"
-import banners from "..\\assets\\data\\banners.json"
+//import products from "..\\assets\\data\\products.json"
+//import banners from "..\\assets\\data\\banners.json"
 import usersClass from '../scripts/users'
 export default new Vuex.Store({
   state: {
     user : {},
     logged: false,
     admin: false,
-    products,
-    banners,
+    //products,
+    //banners,
     search : ""
   },
   mutations: {
@@ -44,14 +44,14 @@ export default new Vuex.Store({
       resp = await resp.json()
       console.log(resp)
     },
-    async updateProducts(state){
-      state.products = await fetch("https://localhost:3000/products")
-    }
+    // async updateProducts(state){
+    //   state.products = await fetch("https://localhost:3000/products")
+    // }
   },
   actions: {
     async performLogin({commit}, username){
       let foundUser = await usersClass.login(username)
-      console.log("FU", foundUser)
+      //console.log("FU", foundUser)
       if(Object.keys(foundUser).length === 0){
         return false
       }
@@ -84,7 +84,8 @@ export default new Vuex.Store({
       }
       return booksRead
     },
-    banner: (state) => {
+    banner: async (state) => {
+      state.banners = await fetch("https://localhost:3000/banner")
       return state.banners
     },
     getProductByID: async(state, id) => {
