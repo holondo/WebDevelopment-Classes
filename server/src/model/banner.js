@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema({
     color: {
         type: String,
-        required: true
+        required: false,
+        default: "#ffffff"
     },
     title: {
         type: String,
@@ -12,13 +13,19 @@ const Schema = mongoose.Schema({
     },
     subtitle: {
         type: String,
-        required: true,
+        required: false,
         trim: true
     },
     img: {
         type: String,
         required: true,
         trim: true
+    },
+    link: {
+        type: String,
+        required: false,
+        trim: true,
+        default: ""
     }
 });
 

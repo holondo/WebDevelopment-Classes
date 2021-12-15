@@ -63,7 +63,8 @@
           body: JSON.stringify(product)
         })
         if(resp.status === 201){
-          window.alert("deuu")
+          window.alert("Inserted")
+          this.$router.push({name: "Home"})
         }
       }
     },

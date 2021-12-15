@@ -44,19 +44,25 @@
     data() {
       return {
         products : {},
+        banner: {}
       }
     },
     created() {
       this.getProducts()
+      this.getBanner()
     },
     methods: {
       async getProducts(){
         let resp = await fetch("http://localhost:3000/products/")
         this.products = await resp.json()
+      },
+      async getBanner(){
+        this.banner = await this.currBanner
+        console.log("Banner", this.banner)
       }
     },
     computed: {
-      ...mapGetters(["isLogged", "user", "userReadBooks", "isAdmin", 'banner'])
+      ...mapGetters(["isLogged", "user", "userReadBooks", "isAdmin", "currBanner"])
     },
   }
 </script>

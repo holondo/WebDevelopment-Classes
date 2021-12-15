@@ -12,7 +12,7 @@ export default new Vuex.Store({
     logged: false,
     admin: false,
     //products,
-    //banners,
+    banners: {},
     search : ""
   },
   mutations: {
@@ -51,7 +51,7 @@ export default new Vuex.Store({
   actions: {
     async performLogin({commit}, username){
       let foundUser = await usersClass.login(username)
-      //console.log("FU", foundUser)
+      console.log("FU", foundUser)
       if(Object.keys(foundUser).length === 0){
         return false
       }
@@ -84,12 +84,13 @@ export default new Vuex.Store({
       }
       return booksRead
     },
-    banner: async (state) => {
-      state.banners = await fetch("https://localhost:3000/banner")
+    currBanner: async (state) => {
+      let resp = await fetch("http://localhost:3000/banner")
+      state.banners = await resp.json()
       return state.banners
     },
     getProductByID: async(state, id) => {
-      let product = await fetch("https://localhost:3000/products/"+id)
+      let product = await fetch("http://localhost:3000/products/"+id)
       return product
     }
   },
