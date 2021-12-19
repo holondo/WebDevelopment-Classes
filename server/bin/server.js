@@ -1,15 +1,19 @@
 import app from '../src/app.js';
 import { createServer } from 'http';
 
+// Set the port and normalize it
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-const server = createServer(app);
+const server = createServer(app); // create server instance
 
+// Config server
 server.listen(port);
 server.on('error', onError);
+
 console.log('Running on ' + port);
 
+// Function to normalize port value
 function normalizePort(val) {
   const port = parseInt(val, 10);
 
@@ -24,6 +28,7 @@ function normalizePort(val) {
   return false;
 }
 
+// Callback to handle error
 function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
@@ -33,6 +38,7 @@ function onError(error) {
     ? 'Pipe ' + port
     : 'Port ' + port;
 
+  // handle error cases
   switch (error.code) {
     case 'EACCES':
       console.error(bind + ' requires elevated privileges');

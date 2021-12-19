@@ -1,9 +1,10 @@
 'use strict';
 
-import mongoose from "mongoose"
+import mongoose from "mongoose" // db instance
 
-const user = mongoose.model('user')
+const user = mongoose.model('user') // model
 
+// Delete user by id
 export async function del(req, res){
     const id = req.params.id;
     try{
@@ -16,6 +17,7 @@ export async function del(req, res){
     }
 }
 
+// Get users list
 export async function get(req, res){
     try{
         const foundUsers = await user.find()
@@ -27,6 +29,7 @@ export async function get(req, res){
     }
 }
 
+// Get user by id
 export async function getByID(req, res){
     const id = req.params.id
     try{
@@ -39,6 +42,7 @@ export async function getByID(req, res){
     }
 }
 
+// Update user by id
 export async function put(req, res){
     const id = req.params.id
     try{
@@ -62,6 +66,7 @@ export async function put(req, res){
     }
 }
 
+// Create new user
 export async function post(req, res){
     const newuser = new user(req.body)
     try {
@@ -75,6 +80,7 @@ export async function post(req, res){
     }
 }
 
+// Login user
 export async function login(req, res){
     const username = req.body.username
     try {

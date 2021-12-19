@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 
+// Banner db model
 const Schema = mongoose.Schema({
     color: {
         type: String,

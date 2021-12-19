@@ -34,7 +34,7 @@
 </template>
 
 <script>
-  import homeDisplayer from "..\\components\\homeDisplayer.vue"
+  import homeDisplayer from "../components/homeDisplayer.vue"
   import { mapGetters } from "vuex";
   export default {
     name: 'Home',

@@ -1,9 +1,10 @@
 'use strict';
 
-import mongoose from "mongoose"
+import mongoose from "mongoose" // db instance
 
-const product = mongoose.model('product')
+const product = mongoose.model('product') // model
 
+// Delete product
 export async function del(req, res){
     const id = req.params.id;
     try{
@@ -16,6 +17,7 @@ export async function del(req, res){
     }
 }
 
+// Get product list
 export async function get(req, res){
     try{
         const foundProducts = await product.find()
@@ -27,6 +29,7 @@ export async function get(req, res){
     }
 }
 
+// Get product by id
 export async function getByID(req, res){
     const id = req.params.id
     try{
@@ -40,6 +43,7 @@ export async function getByID(req, res){
     }
 }
 
+// Update product by id
 export async function put(req, res){
     const id = req.params.id
     try{
@@ -61,6 +65,7 @@ export async function put(req, res){
     }
 }
 
+// Create new product
 export async function post(req, res){
     const newProduct = new product(req.body)
     try {

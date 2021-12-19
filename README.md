@@ -17,6 +17,7 @@
   - Product/Service Management: Administrators can create/update/read/delete (crud) new products and services. For example, they can change the stock quantity.
   - Your functionality: Create a functionality that is specific to your application. It does not have to be something complicated. For instance, if you are selling cars, you may allow users to use an accelerator to hear how each car engine roars up and down.   
   - The system must provide accessibility requirements and provide good usability. The system must be responsive.  
+
 ## 2. Project Description:
   - Administrators can select images to be used as promotional banners in the homescreen
   - Products are categorized by type of publication (Comics, books, magazines, manga, album). In each type, local best sellers will be highlighted.
@@ -35,20 +36,68 @@
   - The project was made using Vuejs
   - Most of the functionality is implemented, a few edge cases were not considered
   - The library used for components was [Vuetify](https://vuetifyjs.com/en/)
-  - The data of the app is currently being faked by using pre made jsons, in the future the api will provide the data
+  - The api was made using express js, using javascript
+  - The database used was mongodb
 
   ## 4. Test Plan: 
 
-  - We plan to use postman to test the server calls
-  - Write unit tests for the api
+  - We used Postman to test the api calls, the tests iteself were made by hand.
 
   ## 5. Test Results:
+  * GET:
+    * /products -> ok
+    * /banner -> ok
+    * /user -> ok
+    * /user/:id -> ok
+  * POST
+    * /products -> ok
+    * /login -> ok
+      * {username: "admin"}
+    * /users -> ok
+      * {
+          "username":"admin",  
+          "admin":true,  
+          "cart":[],  
+          "booksRead":[],  
+          "collections" [],  
+          "wishlist":[],  
+          "follows":[],  
+          "avatar":""}
+    * /banner -> ok
+      * {
+        "color" : "#AAAAff",  
+        "link" : "",  
+        "img" : "https://images-na.ssl-images-amazon.com/images/I/81VlThzDlVL.jpg",  
+        "title":"title test test",  
+        "subtitle" : "subtitle test do test do test"}
+  * PUT
+    * User -> ok
+      * {"_id":"61b75ff425f1c18f01bee8a3",  
+      "username":"admin",  
+      "admin":true,  
+      "cart":[],  
+      "booksRead":[],  
+      "collections":["61b6989001cdd876168e1192"],  
+      "wishlist":["61b6989001cdd876168e1192"],  
+      "follows":[],  
+      "avatar":"",  
+      "__v":0}
+    * 
   ## 6. Build Procedures: 
 
-  - We will use Docker to build the images
-  - The package will contain a docker-compose to run the project
-  - To build and run Milestone02: Follow the instructions in the README.md inside noink directory
+  - Need to run server and noink simultaneously
+  - Go to noink folder and run the following commands: npm install; npm run serve; The url is on localhost:8080/
+  - Go to server folder and run the following commands: npm install; npm run start; You don't need to worry about the url on the server
+  - You will need a mongodb instance running on port 27017, the api will do the rest.
 
   ## 7. Problems: 
+
+  - Not all of functionalities are implemented, like *noink reader* or the product's reviews. 
+  - We wanted to insert initial values to the database, but that is not working yet;
+  - The build process is not automatized and may result in problems;
+  - The tests made for the api were made by hand, which is not ideal.
+
   ## 8. Comments:
-  
+
+  - We wish to improve the code and implement some of the missing functionalities until the review of the group;
+  - Making the project was interesting to learn about javascript and some of the most common technologies and frameworks available.

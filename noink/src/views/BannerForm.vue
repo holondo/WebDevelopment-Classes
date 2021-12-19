@@ -6,7 +6,6 @@
         <v-row>
           <v-col>
             <v-card class="pa-3">
-                <v-text-field v-model="link" outlined label="Link to product" ></v-text-field>
                 <v-text-field v-model="title" outlined label="Headline" ></v-text-field>
                 <v-text-field v-model="subtitle" outlined label="Subtitle" ></v-text-field>
               <v-row>

@@ -13,10 +13,29 @@ import { productsRouter } from './routes/products.js';
 import { usersRouter } from './routes/users.js';
 import { bannerRouter } from "./routes/banner.js";
 
-const app = Express();
+// Initial data to insert in server (not working yet)
+// var banners = require('../data/banners.json')
+// var products = require('../data/products.json')
+// var users = require('../data/users.json')
 
-mongoose.connect('mongodb://localhost:27017/noink')
+const app = Express(); // Main app
 
+mongoose.connect('mongodb://localhost:27017/noink') // db connection
+
+// Isertion of initial data, not working yet!
+// check db
+// let verifier = await product.findOne()
+// if(verifier === {}){
+//     let prodToSave = new product(products)
+//     let bannerToSave = new banner(banners)
+//     let usersToSave = new user(users)
+
+//     prodToSave.save()
+//     bannerToSave.save()
+//     usersToSave.save()
+// }
+
+// App requirements
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(cors())

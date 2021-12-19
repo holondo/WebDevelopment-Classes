@@ -1,10 +1,10 @@
 'use strict';
 
-import mongoose from "mongoose"
+import mongoose from "mongoose" // db instance
 
-const banner = mongoose.model('banner')
+const banner = mongoose.model('banner') // model
 
-
+// Update banner
 export async function put(req, res){
     const id = req.params.id
     try{
@@ -22,6 +22,7 @@ export async function put(req, res){
     }
 }
 
+// Get last banner
 export async function get(req, res){
     try{
         const findBanner = await banner.findOne().sort({ _id: -1 })
@@ -33,6 +34,7 @@ export async function get(req, res){
     }
 }
 
+// Create new banner
 export async function post(req, res){
     const newBanner = new banner(req.body)
     try {
@@ -42,8 +44,7 @@ export async function post(req, res){
         })
     } catch (error) {
         console.error(error)
-        res.status(400).send({
-            message: "Banner was not created"})
+        res.status(400).send({message: "Banner was not created"})
     }
 }
 
