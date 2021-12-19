@@ -1,12 +1,14 @@
 FROM node:lts-alpine
 
 # Make app
-RUN mkdir app
-WORKDIR /app
-COPY package.json package-lock.json* /app/
+RUN mkdir noink
+WORKDIR /noink
+COPY package.json package-lock.json* /noink/
 
 RUN npm install
-COPY . .
+COPY src /noink/src
+COPY public /noink/public
+COPY babel.config.js .eslintrc.js vue.config.js .browserslistrc /noink/
 RUN npm run build
 
 CMD ["npm", "run", "serve"]
