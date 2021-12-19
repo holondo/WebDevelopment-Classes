@@ -85,10 +85,11 @@
     * 
   ## 6. Build Procedures: 
 
-  - Need to run server and noink simultaneously
-  - Go to noink folder and run the following commands: npm install; npm run serve; The url is on localhost:8080/
-  - Go to server folder and run the following commands: npm install; npm run start; You don't need to worry about the url on the server
-  - You will need a mongodb instance running on port 27017, the api will do the rest.
+  - We used Docker containers to make the build and run easier
+    -You need to navigate to this folder and run:
+      - `docker-compose-build`
+      - `docker-compose up`
+    - The frontend will be running on `localhost:8080`
 
   ## 7. Problems: 
 
