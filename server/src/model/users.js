@@ -6,7 +6,12 @@ const schema = mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        unique: true
+        unique: true,
+        index: true
+    },
+    password: {
+        type: String,
+        required: true
     },
     name: {
         type: String,

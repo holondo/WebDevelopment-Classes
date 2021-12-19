@@ -10,8 +10,22 @@
                     outlined
                     v-model="username"
                     @keyup.enter="performLogin"
+                    required
+                    :rules="[() => !!username || 'The username is required']"
                     >
                     </v-text-field>
+
+                    <v-text-field
+                        v-model="password"
+                        :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                        required
+                        :type="show ? 'text' : 'password'"
+                        label="Password"
+                        counter
+                        outlined
+                        rounded
+                        @click:append="show = !show"
+                    ></v-text-field>
                     <v-checkbox
                         v-model="checkbox"
                         label="Admin"
@@ -30,7 +44,7 @@
                 type="warning"
                 v-if="userNotFound"
                 >
-                User not found
+                Wrong credetials 😒
                 </v-alert>
             </v-row>
         </v-card>
@@ -42,12 +56,17 @@ export default {
         return{
             username: "",
             userNotFound : false,
-            checkbox: false
+            checkbox: false,
+            password : "",
+            show : false
         }
     },
     methods: {
         performLogin(){
-            this.$store.dispatch("performLogin", this.username).then((response) => {
+            this.$store.dispatch("performLogin", {
+                username : this.username,
+                password : this.password,
+                }).then((response) => {
                 console.log(response)
                 if(response){
                     this.userNotFound = false
@@ -64,6 +83,7 @@ export default {
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
                     username: this.username,
+                    password: this.password,
                     admin: this.checkbox
                 })
             })

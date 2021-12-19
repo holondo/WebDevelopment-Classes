@@ -49,9 +49,9 @@ export default new Vuex.Store({
     // }
   },
   actions: {
-    async performLogin({commit}, username){
-      let foundUser = await usersClass.login(username)
-      console.log("FU", foundUser)
+    async performLogin({commit}, userObj){
+      console.log("Perform login", userObj)
+      let foundUser = await usersClass.login(userObj)
       if(Object.keys(foundUser).length === 0){
         return false
       }

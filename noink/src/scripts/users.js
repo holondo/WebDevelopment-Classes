@@ -1,6 +1,6 @@
 class Users{
     //Deals with users procedures
-    async login(username){
+    async login(userObj){
         // for (const user of users) {
         //     if(user.username == username){
         //         console.log(user)
@@ -11,10 +11,10 @@ class Users{
         let resp = await fetch("http://localhost:3000/login/", {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({username: username})
+            body: JSON.stringify(userObj)
         })
         let user = await resp.json()
-        console.log(user.body)
+        console.log(user)
         return user.body
     }
 
