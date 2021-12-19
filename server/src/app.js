@@ -20,7 +20,7 @@ import { bannerRouter } from "./routes/banner.js";
 
 const app = Express(); // Main app
 
-mongoose.connect('mongodb://localhost:27017/noink') // db connection
+mongoose.connect('mongodb://intro_web_db:27017/noink') // db connection
 
 // Isertion of initial data, not working yet!
 // check db

@@ -9,6 +9,5 @@ RUN npm install
 COPY src /noink/src
 COPY public /noink/public
 COPY babel.config.js .eslintrc.js vue.config.js .browserslistrc /noink/
-RUN npm run build
 
 CMD ["npm", "run", "serve"]
