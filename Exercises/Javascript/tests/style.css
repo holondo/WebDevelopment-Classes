@@ -1,0 +1,14 @@
+body{background-color: rgb(228, 226, 226); font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+.container{max-width: 40vw; margin: 0 auto;}
+.card{background-color: white; box-shadow: gray 0px 0px 5px; padding: 10px; margin: 15px; color: gray; }
+.text-center{text-align: center;}
+.img-circle{border-radius: 100%;}
+h1{color: tomato;}
+h2, strong{color: black;}
+p{color: gray;}
+.list-inline{display: inline; }
+.list-inline li{list-style-type: none; display: inline-block; margin: 20px; list-style-position: none;}
+.list-inline a{text-decoration: none; color: gray;}
+
+#movies img{height: 20vh; margin: 10px;}
+#img-profile{height: 25vh; box-shadow: lightgray 0px 5px 5px;}
