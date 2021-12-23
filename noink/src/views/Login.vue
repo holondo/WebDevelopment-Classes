@@ -21,6 +21,7 @@
                         required
                         :type="show ? 'text' : 'password'"
                         label="Password"
+                        @keyup.enter="performLogin"
                         counter
                         outlined
                         rounded

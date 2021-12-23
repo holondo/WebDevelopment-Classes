@@ -6,7 +6,6 @@
         <v-row>
           <v-col>
             <v-card class="pa-3">
-              <p>##{{[Pname, price, date, type]}}</p>
               <v-text-field outlined label="Product Name" v-model="Pname"></v-text-field>
               <v-row>
                 <v-text-field v-model="price" label="Price" placeholder="99,99" prefix="$" class="mx-3"></v-text-field>
